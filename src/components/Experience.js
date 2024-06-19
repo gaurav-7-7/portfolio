@@ -10,7 +10,7 @@ const Experience = () => {
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 1 }}
+            transition={{ duration: .5 }}
           >
             <h2>Experience</h2>
             <ul>

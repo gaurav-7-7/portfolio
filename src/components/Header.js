@@ -1,18 +1,36 @@
-import React from 'react';
-import { Navbar, Nav } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { Navbar, Nav, Image } from 'react-bootstrap';
+import { Link, useLocation } from 'react-router-dom';
+import logo from '../assets/favicon.png';
+import './header.css'; // Import your custom CSS file
 
 const Header = () => {
+  const [selected, setSelected] = useState(null);
+  const location = useLocation();
+
+  // Update selected state based on current pathname
+  useEffect(() => {
+    const pathname = location.pathname;
+    setSelected(pathname);
+  }, [location]);
+
+  // Handle click event to update selected state
+  const handleClick = (path) => {
+    setSelected(path);
+  };
+
   return (
     <Navbar bg="dark" variant="dark" expand="lg">
-      <Navbar.Brand as={Link} to="/">My Portfolio</Navbar.Brand>
+      <Navbar.Brand as={Link} to="/">
+        <Image src={logo} alt="Logo" height="30" className="d-inline-block align-top"/>
+      </Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
-        <Nav className="ml-auto">
-          <Nav.Link as={Link} to="/about">About</Nav.Link>
-          <Nav.Link as={Link} to="/experience">Experience</Nav.Link>
-          <Nav.Link as={Link} to="/projects">Projects</Nav.Link>
-          <Nav.Link as={Link} to="/contact">Contact</Nav.Link>
+        <Nav className="mr-auto">
+          <Nav.Link as={Link} to="/about" onClick={() => handleClick('/about')} className={`custom-nav-link ${selected === '/about' ? 'active' : ''}`}>About</Nav.Link>
+          <Nav.Link as={Link} to="/experience" onClick={() => handleClick('/experience')} className={`custom-nav-link ${selected === '/experience' ? 'active' : ''}`}>Experience</Nav.Link>
+          <Nav.Link as={Link} to="/projects" onClick={() => handleClick('/projects')} className={`custom-nav-link ${selected === '/projects' ? 'active' : ''}`}>Projects</Nav.Link>
+          <Nav.Link as={Link} to="/contact" onClick={() => handleClick('/contact')} className={`custom-nav-link ${selected === '/contact' ? 'active' : ''}`}>Contact</Nav.Link>
         </Nav>
       </Navbar.Collapse>
     </Navbar>

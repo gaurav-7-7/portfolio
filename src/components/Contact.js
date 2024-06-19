@@ -40,7 +40,7 @@ const Contact = () => {
                     <motion.div
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
-                        transition={{ duration: 1 }}
+                        transition={{ duration: .5 }}
                     >
                         <section id="contact" className="container">
                             <h1 className="sectionTitle">Contact</h1>
