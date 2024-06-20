@@ -1,25 +1,46 @@
 import React from 'react';
-import { Container, Row, Col, Card } from 'react-bootstrap';
+import { Container, Row, Col, Card, Button } from 'react-bootstrap';
 import { motion } from 'framer-motion';
-
-const projects = [
-  { title: 'Project 1', description: 'Description of project 1' },
-  { title: 'Project 2', description: 'Description of project 2' },
-  // Add more projects as needed
-];
+import resume from '../../assets/gaurav_singh_resume.pdf';
+import resumeImg from '../../assets/resume_gaurav_singh.jpg'
+import './resume.css'
 
 const Resume = () => {
   return (
-    <Container className="my-5">
-      <Row>
-        <Col>
+    <Container>
+      <Row className="justify-content-center">
+        <Col md={10}>
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: .5 }}
           >
-            <h2>About Me</h2>
-            <p>I am a software engineer with 2 years of experience in Angular, NodeJS, MySQL, MongoDB, and ReactJS.</p>
+            <Card className="mt-5">
+              <Card.Header as="h5" className='resume-header'>
+                My Resume
+                <Button
+                  className='download-btn'
+                  as="a"
+                  href={resume}
+                  download="gaurav_singh_resume.pdf"
+                  variant="primary"
+                >
+                  Download
+                </Button>
+              </Card.Header>
+              <Card.Body className='resume-body'>
+                <Card.Text>
+                  <iframe
+                    src={resume}
+                    width="100%"
+                    height="600px"
+                    style={{ border: 'none' }}
+                    title="Resume"
+                  />
+                  {/* <img src={resumeImg} alt="Resume Page 1" className="resume-image" /> */}
+                </Card.Text>
+              </Card.Body>
+            </Card>
           </motion.div>
         </Col>
       </Row>

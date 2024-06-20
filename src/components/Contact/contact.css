@@ -5,8 +5,10 @@
   }
   .sectionTitle {
     color: white;
-    font-size: 26px;
+    font-size: 36px;
+    margin: -1.4rem 0 3rem 0;
     align-items: left;
+    font-weight: bold;
   }
   
   form {
