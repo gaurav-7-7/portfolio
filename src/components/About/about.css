@@ -1,3 +1,61 @@
-about-container {
+.about-container {
     color: white !important;
+}
+
+.hero-name {
+    font-size: 3.5rem;
+    font-weight: bold;
+}
+
+.profile-container {
+    display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+  text-align: center;
+  height: 100dvh;
+  min-height: 500px;
+}
+
+.description {
+    margin: auto;
+    max-width: 24ch;
+}
+
+.hero {
+    max-width: 200px;
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+@media (width >=800px) {
+    .profile-container {
+        height: 100%;
+        flex-direction: row-reverse;
+        align-items: center;
+        justify-content: space-evenly;
+
+        .hero {
+            max-width: 350px;
+            width: 350px;
+            border: 2px solid #ff00f58a;
+            border-radius: 10px;
+        }
+    }
+}
+
+@media (width >=1400px) {
+    .profile-container {
+        height: 100%;
+        .hero {
+            max-width: 300px;
+            width: 300px;
+            border: 2px solid #ff00f58a;
+            border-radius: 10px;
+        }
+    }
 }

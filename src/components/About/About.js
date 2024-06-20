@@ -1,6 +1,8 @@
 import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import { motion } from 'framer-motion';
+import heroImg from '../../assets/resume_profile.jpg'
+import './about.css'
 
 const About = () => {
   return (
@@ -12,8 +14,25 @@ const About = () => {
             animate={{ opacity: 1 }}
             transition={{ duration: .5 }}
           >
-            <h2>About Me</h2>
-            <p>I am a software engineer with 2 years of experience in Angular, NodeJS, MySQL, MongoDB, and ReactJS.</p>
+            <section id="hero" className='profile-container'>
+              <div className='colorModeContainer'>
+                <img
+                  src={heroImg}
+                  className='hero'
+                  alt="Profile picture of Harris Johnsen"
+                />
+              </div>
+              <div className='info'>
+                <h1 className='hero-name'>
+                  Gaurav Singh
+                </h1>
+                <h2>Full Stack Developer</h2>
+                <p className='description'>
+                  With a passion for developing modern React web apps for commercial
+                  businesses.
+                </p>
+              </div>
+            </section>
           </motion.div>
         </Col>
       </Row>
