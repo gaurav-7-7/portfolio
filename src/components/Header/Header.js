@@ -9,13 +9,10 @@ const Header = () => {
   const [selected, setSelected] = useState(null);
   const location = useLocation();
 
-  // Update selected state based on current pathname
   useEffect(() => {
-    const pathname = location.pathname;
-    setSelected(pathname);
+    setSelected(location.pathname);
   }, [location]);
 
-  // Handle click event to update selected state
   const handleClick = (path) => {
     setSelected(path);
   };
@@ -23,7 +20,7 @@ const Header = () => {
   return (
     <Navbar bg="dark" variant="dark" expand="lg">
       <Navbar.Brand as={Link} to="/">
-        <Image src={logo} alt="Logo" height="30" className="d-inline-block align-top"/>
+        <Image src={logo} alt="Logo" height="30" className="d-inline-block align-top" />
       </Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">

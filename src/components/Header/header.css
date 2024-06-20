@@ -1,6 +1,6 @@
 .custom-nav-link {
     transition: color 0.3s ease;
-    margin: 0 0 0 5px;
+    margin: 0 0 0 8px;
     border-radius: 3px;
     cursor: pointer;
     color: white !important;
@@ -12,7 +12,7 @@
     text-decoration: none;
 }
 
-.navbar-dark .navbar-nav .nav-link.custom-nav-link:active {
+.navbar-dark .navbar-nav .nav-link.custom-nav-link.active {
     background-color: #212020;
 }
 

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import './contact.css';
 import { motion } from 'framer-motion';
+import emailjs from 'emailjs-com'; // Import EmailJS SDK
 
 const Contact = () => {
     const [formData, setFormData] = useState({
@@ -20,17 +21,20 @@ const Contact = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        const { name, email, message } = formData;
-        const subject = 'Visited portfolio';
-        const body = `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`;
-        window.location.href = `mailto:your-email@example.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-
-        // Reset the form
-        setFormData({
-            name: '',
-            email: '',
-            message: ''
-        });
+        emailjs.sendForm('service_kttihwm', 'template_5w91rji', e.target, 'Ow0pXWthtK1VeiCr-')
+            .then((result) => {
+                console.log(result.text);
+                alert('Email sent successfully!');
+                // Reset the form
+                setFormData({
+                    name: '',
+                    email: '',
+                    message: ''
+                });
+            }, (error) => {
+                console.log(error.text);
+                alert('Failed to send email. Please try again later.');
+            });
     };
 
     return (
