@@ -30,14 +30,14 @@ const Resume = () => {
               </Card.Header>
               <Card.Body className='resume-body'>
                 <Card.Text>
-                  <iframe
+                  {/* <iframe
                     src={resume}
                     width="100%"
                     height="600px"
                     style={{ border: 'none' }}
                     title="Resume"
-                  />
-                  {/* <img src={resumeImg} alt="Resume Page 1" className="resume-image" /> */}
+                  /> */}
+                  <img src={resumeImg} alt="Resume Page 1" className="resume-image" />
                 </Card.Text>
               </Card.Body>
             </Card>

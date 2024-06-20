@@ -25,9 +25,10 @@
 
 .resume-body {
     padding: 0.8rem;
+    padding-top: 0;
     background: #212020;
 }
 
 .resume-image {
-    
+    height: 71rem;
 }
