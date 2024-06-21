@@ -48,6 +48,15 @@ const Projects = () => {
                   h3="Pokedex"
                   p="Browse and find all you favourite pokemons"
                 />
+                <ProjectCard
+                  className='project-card'
+                  src={config.projectAssest.TODO.todoApp}
+                  projectLink={config.projectAssest.POKEDEX.liveLink}
+                  repoLink={config.projectAssest.POKEDEX.repoLink}
+                  technologies="Angular.js Javascript MonogoDB CSS AWS"
+                  h3="ToDo APP"
+                  p="Log all you tasks and mantain productivity."
+                />
               </div>
             </section>
           </motion.div>
