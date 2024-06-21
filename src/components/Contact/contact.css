@@ -91,3 +91,32 @@
       background-color: rgba(36 38 39) !important;
     }
   }
+  
+  .notif-message {
+    margin: auto;
+    height: 3rem;
+  }
+
+  .close-btn, .close-btn:hover{
+    background: transparent;
+    color: white;
+    border: none;
+  }
+
+  .notification-error {
+    background: #ff686859;
+    display: inline-block;
+    width: 50%;
+    margin: auto;
+    border-radius: 7px;
+    margin-top: 1rem;
+  }
+
+  .notification-success {
+    background: #acffb259;
+    display: inline-block;
+    width: 50%;
+    margin: auto;
+    border-radius: 7px;
+    margin-top: 1rem;
+  }

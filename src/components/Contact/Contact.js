@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
-import { Container, Row, Col } from 'react-bootstrap';
+import { Container, Row, Col, Button } from 'react-bootstrap';
 import './contact.css';
 import { motion } from 'framer-motion';
-import emailjs from 'emailjs-com'; // Import EmailJS SDK
+import { FaTimes } from 'react-icons/fa';
+import emailjs from 'emailjs-com';
+import config from '../config'
 
 const Contact = () => {
     const [formData, setFormData] = useState({
@@ -10,6 +12,10 @@ const Contact = () => {
         email: '',
         message: ''
     });
+
+    const [showSnackbar, setShowSnackbar] = useState(false);
+    const [snackbarMessage, setSnackbarMessage] = useState('');
+    const [snackbarSeverity, setSnackbarSeverity] = useState('success'); // 'success' or 'error'
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -19,12 +25,19 @@ const Contact = () => {
         });
     };
 
+    const handleSnackbarClose = () => {
+        setShowSnackbar(false);
+    };
+
     const handleSubmit = (e) => {
         e.preventDefault();
-        emailjs.sendForm('service_kttihwm', 'template_5w91rji', e.target, 'Ow0pXWthtK1VeiCr-')
+
+        emailjs.sendForm(config.servideId, config.templateId, e.target, config.userId)
             .then((result) => {
                 console.log(result.text);
-                alert('Email sent successfully!');
+                setSnackbarSeverity('success');
+                setSnackbarMessage('Email sent successfully!');
+                setShowSnackbar(true);
                 // Reset the form
                 setFormData({
                     name: '',
@@ -33,7 +46,9 @@ const Contact = () => {
                 });
             }, (error) => {
                 console.log(error.text);
-                alert('Failed to send email. Please try again later.');
+                setSnackbarSeverity('error');
+                setSnackbarMessage('Failed to send email. Please try again later.');
+                setShowSnackbar(true);
             });
     };
 
@@ -92,6 +107,11 @@ const Contact = () => {
                                 </div>
                                 <input className="hover btn" type="submit" value="Submit" />
                             </form>
+                            {showSnackbar && (
+                                <div className={`${snackbarSeverity === 'success' ? 'notification-success' : 'notification-error'}`}>
+                                    <p className='notif-message'>{snackbarMessage} <Button className='notif-message close-btn' onClick={handleSnackbarClose}><FaTimes /></Button></p>
+                                </div>
+                            )}
                         </section>
                     </motion.div>
                 </Col>

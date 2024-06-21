@@ -19,7 +19,7 @@
 
 .description {
     margin: auto;
-    max-width: 24ch;
+    max-width: 40ch;
 }
 
 .hero {
@@ -42,8 +42,9 @@
         .hero {
             max-width: 350px;
             width: 350px;
-            border: 2px solid #ff00f58a;
+            border: 2px solid #ffffff8a;
             border-radius: 10px;
+            box-shadow: 0 6px 12px rgb(0 0 0 / 60%);
         }
     }
 }
@@ -54,8 +55,9 @@
         .hero {
             max-width: 300px;
             width: 300px;
-            border: 2px solid #ff00f58a;
+            border: 2px solid #ffffff8a;
             border-radius: 10px;
+            box-shadow: 0 6px 12px rgb(0 0 0 / 60%);
         }
     }
 }

@@ -1,8 +1,7 @@
 import React from 'react';
 import { Container, Row, Col, Card, Button } from 'react-bootstrap';
 import { motion } from 'framer-motion';
-import resume from '../../assets/gaurav_singh_resume.pdf';
-import resumeImg from '../../assets/resume_gaurav_singh.jpg'
+import config from '../config'
 import './resume.css'
 
 const Resume = () => {
@@ -21,7 +20,7 @@ const Resume = () => {
                 <Button
                   className='download-btn'
                   as="a"
-                  href={resume}
+                  href={config.resume}
                   download="gaurav_singh_resume.pdf"
                   variant="primary"
                 >
@@ -30,14 +29,7 @@ const Resume = () => {
               </Card.Header>
               <Card.Body className='resume-body'>
                 <Card.Text>
-                  {/* <iframe
-                    src={resume}
-                    width="100%"
-                    height="600px"
-                    style={{ border: 'none' }}
-                    title="Resume"
-                  /> */}
-                  <img src={resumeImg} alt="Resume Page 1" className="resume-image" />
+                  <img src={config.resumeImg} alt="Resume Page 1" className="resume-image" />
                 </Card.Text>
               </Card.Body>
             </Card>

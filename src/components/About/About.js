@@ -1,7 +1,7 @@
 import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import { motion } from 'framer-motion';
-import heroImg from '../../assets/resume_profile.jpg'
+import heroImg from '../../assets/resume_profile.jpeg'
 import './about.css'
 
 const About = () => {
@@ -28,8 +28,8 @@ const About = () => {
                 </h1>
                 <h2>Full Stack Developer</h2>
                 <p className='description'>
-                  With a passion for developing modern React web apps for commercial
-                  businesses.
+                  Hey there! I'm a full-stack developer passionate about crafting with Javascript, frontend to backend. <br/>
+                  I love bringing ideas to life in JavaScript.
                 </p>
               </div>
             </section>
