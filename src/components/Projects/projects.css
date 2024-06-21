@@ -1,0 +1,93 @@
+.projects-row {
+    margin: 3rem 0;
+}
+
+.skills-row {
+
+}
+
+.project-card {
+
+}
+
+.project-section {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  
+    img {
+      max-width: 150px;
+      width: 60px;
+      align-self: center;
+      background-color: transparent;
+      border-radius: 10px;
+      margin-left: auto;
+    }
+  
+    a {
+      width: fit-content;
+      border-radius: 10px;
+      text-decoration: none;
+      color: #7d7d7d;
+      transition: transform 200ms ease-in-out;
+    }
+
+    a h3 {
+        display: block;
+        font-size: 24px;
+        margin-bottom: 10px;
+    }
+
+    a .technologies {
+        margin: -5px 0 10px 0;
+        color: #d97bd9;
+        font-size: 14px;
+        display: block;
+    }
+  
+    a:hover {
+      transform: scale(1.05);
+    }
+    
+    a span .project-link {
+        display: inline-block;
+        width: 2rem;
+        height: 1.7rem;
+    }
+  
+    a span .project-repo {
+        display: inline-block;
+        width: 2rem;
+        height: 1.7rem;
+    }
+
+    a .card {
+      background-color: #000000b3;
+      padding: 1rem;
+      display: flex;
+      align-items: flex-start;
+    }
+
+    a .text-content {
+        margin: -3rem 4rem 6px 0;
+        text-align: left;
+        width: 22rem;
+    }
+  }
+  
+  .projectsContainer {
+    display: flex;
+    color: #7d7d7d;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+  }
+  
+  @media (width >= 800px) {
+    .projectsContainer {
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+      padding: 0 30px;
+    }
+  }
