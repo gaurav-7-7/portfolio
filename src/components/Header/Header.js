@@ -26,7 +26,6 @@ const Header = () => {
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="mr-auto">
           <Nav.Link as={Link} to="/about" onClick={() => handleClick('/about')} className={`custom-nav-link ${selected === '/about' ? 'active' : ''}`}>About</Nav.Link>
-          <Nav.Link as={Link} to="/experience" onClick={() => handleClick('/experience')} className={`custom-nav-link ${selected === '/experience' ? 'active' : ''}`}>Experience</Nav.Link>
           <Nav.Link as={Link} to="/projects" onClick={() => handleClick('/projects')} className={`custom-nav-link ${selected === '/projects' ? 'active' : ''}`}>Projects</Nav.Link>
           <Nav.Link as={Link} to="/resume" onClick={() => handleClick('/resume')} className={`custom-nav-link ${selected === '/resume' ? 'active' : ''}`}>Resume</Nav.Link>
           <Nav.Link as={Link} to="/contact" onClick={() => handleClick('/contact')} className={`custom-nav-link ${selected === '/contact' ? 'active' : ''}`}>Contact</Nav.Link>
