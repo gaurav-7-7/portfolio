@@ -32,7 +32,7 @@ const Contact = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        emailjs.sendForm(config.servideId, config.templateId, e.target, config.userId)
+        emailjs.sendForm(config.serviceId, config.templateId, e.target, config.userId)
             .then((result) => {
                 console.log(result.text);
                 setSnackbarSeverity('success');
