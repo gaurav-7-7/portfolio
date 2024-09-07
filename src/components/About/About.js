@@ -1,7 +1,7 @@
 import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import { motion } from 'framer-motion';
-import heroImg from '../../assets/resume_profile.jpeg'
+import heroImg from '../../assets/resume_profile.jpg'
 import './about.css'
 
 const About = () => {
